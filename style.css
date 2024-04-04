@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    background: #0E100A;
+    color: white;
+
+}
+
+
+
+#city-input {
+    border: none;
+    border-bottom: solid 4px white;
+    background-color: transparent;
+    color: white;
+    width: 20%;
+    font-size: 30px;
+    padding-bottom: 0.2rem;
+    text-align: center;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.error-message {
+    font-family: 'SF UI TEXT SEMIBOLD';
+    font-size: 1rem;
+    color: rgba(255, 0, 0, 0.637);
+    margin-top: 0.7rem;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
+    transform-origin: top center;
+    margin-right: 1rem;
+}
+
+.error-message.show {
+    opacity: 1;
+    animation: shake 0.3s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+
+#city-input:focus {
+    outline: none;
+}
+
+#city-input:focus::placeholder {
+    color: transparent;
+}
+
+#city-input::placeholder {
+    text-transform: uppercase;
+    font-family: 'SF UI TEXT SEMIBOLD';
+    text-align: center;
+    font-size: 30px;
+    pointer-events: none;
+    color: #fdfff9;
+    opacity: 0.5;
+}
+
+#heading {
+    text-align: center;
+    font-family: 'SF UI TEXT SEMIBOLD';
+    text-transform: uppercase;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    margin-right: 5rem;
+}
+
+#SubmitButton {
+    width: 5rem;
+    padding: 0.6rem;
+    border: solid 2px white;
+    background: none;
+    color: white;
+    font-family: 'SF UI TEXT semibold';
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#SubmitButton:hover {
+    background: white;
+    color: #0E100A;
+}
+
+#SubmitButton:active {
+    background: #0E100A;
+    color: white;
+}
+
+.container {
+    text-align: center;
+
+}
+
+.container2 {
+    margin-top: 10rem;
+}
+
+
+
+.hide {
+    display: none;
+    opacity: 0;
+}
+
+.show {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 2s both;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(6rem);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-1.5rem);
+    }
+}
+
+.icon-styling {
+    width: 300px;
+    margin: auto;
+    pointer-events: none;
+}
+
+.weather-info {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-family: 'SF UI TEXT semibold';
+    animation: slide2 0.4s ease-in-out both;
+}
+
+.weather-country {
+    animation: slide2 0.4s ease-in-out both;
+    animation-delay: 0.4s;
+}
+
+.weather-temp {
+    animation: slide2 0.4s ease-in-out both;
+    animation-delay: 0.5s;
+}
+
+.weather-windSpeed {
+    animation: slide2 0.4s ease-in-out both;
+    animation-delay: 0.6s;
+}
+
+.weather-currentTime {
+    animation: slide2 0.4s ease-in-out both;
+    animation-delay: 0.7s;
+}
+
+.weather-weather {
+    animation: slide2 0.4s ease-in-out both;
+    animation-delay: 0.8s;
+}
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(-3rem);
+    }
+
+    100% {
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes slide2 {
+    0% {
+        transform: translateX(-45rem);
+    }
+
+    100% {
+        transform: translateX(0rem);
+    }
+}
+
+.iconAndInfo {
+    border: solid 2px white;
+    justify-content: center;
+    text-align: left;
+    margin-top: 1rem;
+    padding: 2rem 2rem 0rem 2rem;
+    ;
+}
+
+.hide2 {
+    display: none;
+    animation: slide2 0.4s ease-in-out both;
+
+}
+
+
+.show2 {
+    display: inline-flex;
+    animation: slide 0.4s ease-in-out both;
+}
+
+
+.containerForInfo {
+    float: left;
+}
+
+@media (max-width: 414px) {
+    * {
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    body {
+        padding: 0 1rem;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .error-message {
+        margin-top: 0;
+    }
+
+    .icon-styling {
+        width: 13rem;
+    }
+
+    .weather-info {
+        font-size: 1.3rem;
+    }
+
+    #heading {
+        font-size: 2rem;
+        margin-left: 2rem;
+    }
+
+    #city-input {
+        width: 60%;
+        font-size: 2rem;
+        text-align: center;
+        margin-right: 0.5rem;
+        margin-top: 5rem;
+    }
+
+    .iconAndInfo {
+        padding: 0rem 0rem 5rem 0.7rem;
+    }
+
+    .weather-weather {
+        position: absolute;
+    }
+
+    .weather-weather::after {
+        position: block;
+    }
+
+
+    .weather-icons {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .container2 {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .icon-styling {
+        width: 12rem;
+    }
+
+    .weather-info {
+        font-size: 1rem;
+    }
+}
